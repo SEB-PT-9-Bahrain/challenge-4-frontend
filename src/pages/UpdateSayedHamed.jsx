@@ -10,10 +10,10 @@ function UpdateSayedHamed() {
     sayedHamedImage: "",
   });
 
-    const { sayedHamedId } = useParams()
+    const { id } = useParams()
 
       async function getSayedHamed(){
-    const response = await axios.get(`${import.meta.VITE_BACK_END_SERVER_URL}/sayed-hameds/${sayedHamedId}`)
+    const response = await axios.get(`${import.meta.VITE_BACK_END_SERVER_URL}/sayed-hameds/${id}`)
     setFormData(response.data)
   }
 
