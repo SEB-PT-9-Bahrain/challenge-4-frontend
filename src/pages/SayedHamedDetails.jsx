@@ -5,16 +5,16 @@ import { useNavigate, useParams, Link } from 'react-router'
 function SayedHamedDetails() {
   const { sayedHamed, setSayedHamed } = useState(null)
 
-  const { sayedHamedId } = useParams()
+  const { id } = useParams()
   const navigate = useNavigate()
 
   async function getSayedHamed(){
-    const response = await axios.get(`${import.meta.env.VITE_BACK_END_SERVER_URL}/sayed-hameds/${sayedHamedId}`)
+    const response = await axios.get(`${import.meta.env.VITE_BACK_END_SERVER_URL}/sayed-hameds/${id}`)
     setSayedHamed(response.data)
   }
 
   async function deleteSayedHamed(){
-    const respone = await axios.delete(`${import.meta.env.VITE_BACK_END_SERVER_URL}/sayed-hameds/${sayedHamedId}`)
+    const respone = await axios.delete(`${import.meta.env.VITE_BACK_END_SERVER_URL}/sayed-hameds/${id}`)
     navigate('/sayed-hameds')
   }
 
